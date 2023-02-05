@@ -1,6 +1,9 @@
 from turtle import *
 import turtle
 
+bgcolor('black')
+title("Tic Tac Toe Game Made by Ashraf")
+pencolor('green')
 WIDTH, HEIGHT = 600, 600
 screen = turtle.Screen()
 
@@ -36,6 +39,7 @@ def set_box():
 
 
 def draw_cross(x, y):
+    pencolor('red')
     if (-175 < x < -75) and (75 < y < 175):
         turtle.width(7)
         draw_between([-155, 155], [-95, 95])
@@ -43,7 +47,6 @@ def draw_cross(x, y):
 
 
 def get_mouse_click_coordinate(x, y):
-    turtle.onscreenclick(None)
     draw_cross(x, y)
 
 
