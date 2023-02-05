@@ -35,9 +35,16 @@ def set_box():
         x, y = x + change, y
 
 
+def draw_cross(x, y):
+    if (-175 < x < -75) and (75 < y < 175):
+        turtle.width(7)
+        draw_between([-155, 155], [-95, 95])
+        draw_between([-155, 95], [-95, 155])
+
+
 def get_mouse_click_coordinate(x, y):
     turtle.onscreenclick(None)
-    draw_between([x, y],[x+2, y+2])
+    draw_cross(x, y)
 
 
 if __name__ == '__main__':
