@@ -3,7 +3,6 @@ import turtle
 
 WIDTH, HEIGHT = 600, 600
 screen = turtle.Screen()
-turtle = turtle.Turtle()
 
 
 def draw_between(point1, point2):
@@ -36,15 +35,15 @@ def set_box():
         x, y = x + change, y
 
 
-# def get_mouse_click_coordinate(x, y):
-#     r = 50
-#     turtle.circle(r)
+def get_mouse_click_coordinate(x, y):
+    turtle.onscreenclick(None)
+    draw_between([x, y],[x+2, y+2])
+
 
 if __name__ == '__main__':
     turtle.hideturtle()
     screen = Screen()
     screen.setup(WIDTH, HEIGHT)
     set_box()
-    # turtle.onscreenclick(get_mouse_click_coordinate)
-    # screen.onkeypress(screen.bye(), "Escape")
-    screen.exitonclick()
+    turtle.onscreenclick(get_mouse_click_coordinate)
+    turtle.mainloop()
