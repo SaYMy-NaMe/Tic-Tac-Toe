@@ -3,7 +3,7 @@ import turtle
 
 bgcolor('black')
 title("Tic Tac Toe Game Made by Ashraf")
-pencolor('green')
+pencolor('white')
 turtle.speed(0)
 WIDTH, HEIGHT = 600, 600
 screen = turtle.Screen()
@@ -19,26 +19,89 @@ def draw_between(point1, point2):
     turtle.goto(point2)
 
 
-def draw_box(x, y, change):
-    draw_between([x, y], [x + change, y])
-    draw_between([x + change, y], [x + change, y - change])
-    draw_between([x + change, y - change], [x, y - change])
-    draw_between([x, y - change], [x, y])
-
-
 def set_box():
-    x, y, change = - 175, 175, 100
-    for i in range(3):
-        draw_box(x, y, change)
-        x, y = x + change, y
-    x, y, change = - 175, 75, 100
-    for i in range(3):
-        draw_box(x, y, change)
-        x, y = x + change, y
-    x, y, change = - 175, -25, 100
-    for i in range(3):
-        draw_box(x, y, change)
-        x, y = x + change, y
+    draw_between([-175, 75], [125, 75])
+    draw_between([-175, -25], [125, -25])
+    draw_between([-75, 175], [-75, -125])
+    draw_between([25, 175], [25, -125])
+
+
+def terminate_func():
+    pencolor('orange')
+    pensize(5)
+    if check_point[0] == check_point[3] == check_point[6] == 1:
+        penup()
+        goto(-125, 175)
+        pendown()
+        goto(-125, -125)
+        turtle.exitonclick()
+    elif check_point[1] == check_point[4] == check_point[7] == 1:
+        penup()
+        goto(-25, 175)
+        pendown()
+        goto(-25, -125)
+        turtle.exitonclick()
+    elif check_point[2] == check_point[5] == check_point[8] == 1:
+        penup()
+        goto(75, 175)
+        pendown()
+        goto(75, -125)
+        turtle.exitonclick()
+    elif check_point[0] == check_point[3] == check_point[6] == 1:
+        penup()
+        goto(-125, 175)
+        pendown()
+        goto(-125, -125)
+        turtle.exitonclick()
+    elif check_point[1] == check_point[4] == check_point[7] == 1:
+        penup()
+        goto(-25, 175)
+        pendown()
+        goto(-25, -125)
+        turtle.exitonclick()
+    elif check_point[2] == check_point[5] == check_point[8] == 1:
+        penup()
+        goto(75, 175)
+        pendown()
+        goto(75, -125)
+        turtle.exitonclick()
+
+    elif check_point[0] == check_point[3] == check_point[6] == 2:
+        penup()
+        goto(-125, 175)
+        pendown()
+        goto(-125, -125)
+        turtle.exitonclick()
+    elif check_point[1] == check_point[4] == check_point[7] == 2:
+        penup()
+        goto(-25, 175)
+        pendown()
+        goto(-25, -125)
+        turtle.exitonclick()
+    elif check_point[2] == check_point[5] == check_point[8] == 2:
+        penup()
+        goto(75, 175)
+        pendown()
+        goto(75, -125)
+        turtle.exitonclick()
+    elif check_point[0] == check_point[3] == check_point[6] == 2:
+        penup()
+        goto(-125, 175)
+        pendown()
+        goto(-125, -125)
+        turtle.exitonclick()
+    elif check_point[1] == check_point[4] == check_point[7] == 2:
+        penup()
+        goto(-25, 175)
+        pendown()
+        goto(-25, -125)
+        turtle.exitonclick()
+    elif check_point[2] == check_point[5] == check_point[8] == 2:
+        penup()
+        goto(75, 175)
+        pendown()
+        goto(75, -125)
+        turtle.exitonclick()
 
 
 def draw_cross(x, y):
@@ -107,6 +170,7 @@ def draw_cross(x, y):
         number_of_turn = number_of_turn + 1
         check_point[8] = 1
         print(check_point)
+    terminate_func()
 
 
 def draw_circle(x, y):
@@ -193,6 +257,7 @@ def draw_circle(x, y):
         number_of_turn = number_of_turn + 1
         check_point[8] = 2
         print(check_point)
+    terminate_func()
 
 
 def get_mouse_click_coordinate(x, y):
