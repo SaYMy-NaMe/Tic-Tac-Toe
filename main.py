@@ -1,14 +1,33 @@
 from turtle import *
 import turtle
+import time
 
 bgcolor('black')
-title("Tic Tac Toe Game Made by Ashraf")
+title("Tic Tac Toe made by Ashraf")
 pencolor('white')
 turtle.speed(0)
 WIDTH, HEIGHT = 600, 600
+
 screen = turtle.Screen()
 check_point = [0, 0, 0, 0, 0, 0, 0, 0, 0]
 number_of_turn = 1
+check = 0
+
+
+def game_over():
+    global check
+    pencolor('white')
+    time.sleep(2)
+    turtle.clear()
+    turtle.penup()
+    setposition(-192, 0)
+    turtle.pendown()
+    if check == 1:
+        turtle.write("Game Over! \nCongratulation Rumi, You have won the Match: 3", font=('monaco', 15, 'bold'), align='left')
+    elif check == 2:
+        turtle.write("Game Over! \nCongratulations Pieta, You have won the match: 3", font=('monaco', 15, 'bold'), align='left')
+    else:
+        turtle.write("LOL! The Game is Draw", font=('monaco', 15, 'bold'), align='left')
 
 
 def draw_between(point1, point2):
@@ -27,6 +46,7 @@ def set_box():
 
 
 def terminate_func():
+    global check;
     pencolor('orange')
     pensize(2)
     if check_point[0] == check_point[3] == check_point[6] == 1:
@@ -34,132 +54,176 @@ def terminate_func():
         goto(-125, 175)
         pendown()
         goto(-125, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[1] == check_point[4] == check_point[7] == 1:
         penup()
         goto(-25, 175)
         pendown()
         goto(-25, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[2] == check_point[5] == check_point[8] == 1:
         penup()
         goto(75, 175)
         pendown()
         goto(75, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[3] == check_point[6] == 1:
         penup()
         goto(-125, 175)
         pendown()
         goto(-125, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[1] == check_point[4] == check_point[7] == 1:
         penup()
         goto(-25, 175)
         pendown()
         goto(-25, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[2] == check_point[5] == check_point[8] == 1:
         penup()
         goto(75, 175)
         pendown()
         goto(75, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[1] == check_point[2] == 1:
         penup()
         goto(-175, 125)
         pendown()
         goto(125, 125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[3] == check_point[4] == check_point[5] == 1:
         penup()
         goto(-175, 25)
         pendown()
         goto(125, 25)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[6] == check_point[7] == check_point[8] == 1:
         penup()
         goto(-175, -75)
         pendown()
         goto(125, -75)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[4] == check_point[8] == 1:
         penup()
         goto(-175, 170)
         pendown()
         goto(120, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[2] == check_point[4] == check_point[6] == 1:
         penup()
         goto(125, 170)
         pendown()
         goto(-170, -125)
+        check = 1
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[3] == check_point[6] == 2:
         penup()
         goto(-125, 175)
         pendown()
         goto(-125, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[1] == check_point[4] == check_point[7] == 2:
         penup()
         goto(-25, 175)
         pendown()
         goto(-25, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[2] == check_point[5] == check_point[8] == 2:
         penup()
         goto(75, 175)
         pendown()
         goto(75, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[3] == check_point[6] == 2:
         penup()
         goto(-125, 175)
         pendown()
         goto(-125, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[1] == check_point[4] == check_point[7] == 2:
         penup()
         goto(-25, 175)
         pendown()
         goto(-25, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[2] == check_point[5] == check_point[8] == 2:
         penup()
         goto(75, 175)
         pendown()
         goto(75, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[1] == check_point[2] == 2:
         penup()
         goto(-175, 125)
         pendown()
         goto(125, 125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[3] == check_point[4] == check_point[5] == 2:
         penup()
         goto(-175, 25)
         pendown()
         goto(125, 25)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[6] == check_point[7] == check_point[8] == 2:
         penup()
         goto(-175, -75)
         pendown()
         goto(125, -75)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[0] == check_point[4] == check_point[8] == 2:
         penup()
         goto(-175, 170)
         pendown()
         goto(120, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
     elif check_point[2] == check_point[4] == check_point[6] == 2:
         penup()
         goto(125, 170)
         pendown()
         goto(-170, -125)
+        check = 2
+        game_over()
         turtle.exitonclick()
 
 
