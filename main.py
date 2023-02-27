@@ -17,17 +17,17 @@ check = 0
 def game_over():
     global check
     pencolor('white')
-    time.sleep(2)
+    time.sleep(1)
     turtle.clear()
     turtle.penup()
     setposition(-192, 0)
     turtle.pendown()
     if check == 1:
-        turtle.write("Game Over! \nCongratulation Rumi, You have won the Match: 3", font=('monaco', 15, 'bold'), align='left')
+        turtle.write("Game Over! \nCongratulation Ashraf, You have won the Match: 3", font=('monaco', 15, 'bold'), align='left')
     elif check == 2:
-        turtle.write("Game Over! \nCongratulations Pieta, You have won the match: 3", font=('monaco', 15, 'bold'), align='left')
+        turtle.write("Game Over! \nCongratulations Srizon, You have won the match: 3", font=('monaco', 15, 'bold'), align='left')
     else:
-        turtle.write("LOL! The Game is Draw", font=('monaco', 15, 'bold'), align='left')
+        turtle.write("LOL! The Game is Draw", font=('monaco', 30, 'bold'), align='left')
 
 
 def draw_between(point1, point2):
@@ -46,7 +46,7 @@ def set_box():
 
 
 def terminate_func():
-    global check;
+    global check
     pencolor('orange')
     pensize(2)
     if check_point[0] == check_point[3] == check_point[6] == 1:
@@ -225,6 +225,9 @@ def terminate_func():
         check = 2
         game_over()
         turtle.exitonclick()
+    elif all(num != 0 for num in check_point) and len(check_point) > 0:
+        game_over()
+
 
 
 def draw_cross(x, y):
