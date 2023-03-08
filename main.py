@@ -23,10 +23,10 @@ def game_over():
     setposition(-192, 0)
     turtle.pendown()
     if check == 1:
-        turtle.write("Game Over! \nCongratulation Partho, You have won the Match: 3", font=('monaco', 15, 'bold'),
+        turtle.write('Game Over! \nCongratulation Ashraf, You have won the Match :3', font=('monaco', 15, 'bold'),
                      align='left')
     elif check == 2:
-        turtle.write("Game Over! \nCongratulations Ashraf, You have won the match: 3", font=('monaco', 15, 'bold'),
+        turtle.write('Game Over! \nCongratulations Shanto, You have won the match :3', font=('monaco', 15, 'bold'),
                      align='left')
     else:
         turtle.write("LOL! The Game is Draw", font=('monaco', 30, 'bold'), align='left')
@@ -184,6 +184,7 @@ def terminate_func():
         turtle.exitonclick()
     elif all(num != 0 for num in check_point) and len(check_point) > 0:
         game_over()
+        turtle.exitonclick()
 
 
 def draw_cross(x, y):
@@ -349,7 +350,6 @@ def get_mouse_click_coordinate(x, y):
             draw_cross(x, y)
         else:
             draw_circle(x, y)
-
 
 if __name__ == '__main__':
     turtle.hideturtle()
