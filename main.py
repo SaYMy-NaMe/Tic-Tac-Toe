@@ -23,10 +23,10 @@ def game_over():
     setposition(-192, 0)
     turtle.pendown()
     if check == 1:
-        turtle.write('Game Over! \nCongratulation Ashraf, You have won the Match :3', font=('monaco', 15, 'bold'),
+        turtle.write('Game Over! \nCongratulation ' + name1 + ', You have won the Match :3', font=('monaco', 15, 'bold'),
                      align='left')
     elif check == 2:
-        turtle.write('Game Over! \nCongratulations Shanto, You have won the match :3', font=('monaco', 15, 'bold'),
+        turtle.write('Game Over! \nCongratulations ' + name2 + ', You have won the match :3', font=('monaco', 15, 'bold'),
                      align='left')
     else:
         turtle.write("LOL! The Game is Draw", font=('monaco', 30, 'bold'), align='left')
@@ -352,6 +352,8 @@ def get_mouse_click_coordinate(x, y):
             draw_circle(x, y)
 
 if __name__ == '__main__':
+    name1 = turtle.textinput('Name of Player 1', 'Name')
+    name2 = turtle.textinput("Name of Player 2", 'Name')
     turtle.hideturtle()
     screen = Screen()
     screen.setup(WIDTH, HEIGHT)
